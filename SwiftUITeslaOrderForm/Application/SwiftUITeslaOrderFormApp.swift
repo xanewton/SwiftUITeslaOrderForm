@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SwiftUITeslaOrderFormApp: App {
+    @StateObject private var order = OrderViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(order)
         }
     }
 }
