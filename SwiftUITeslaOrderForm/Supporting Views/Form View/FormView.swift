@@ -17,6 +17,7 @@ struct FormView: View {
         UITableView.appearance().sectionHeaderHeight = 0
         UITableView.appearance().sectionFooterHeight = 10
         UITableView.appearance().backgroundColor = .clear
+        UISwitch.appearance().onTintColor = UIColor.baseGreen
         // Add next step here
     }
 
