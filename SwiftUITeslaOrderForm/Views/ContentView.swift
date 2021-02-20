@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    //@EnvironmentObject var order:OrderViewModel
-    @ObservedObject var order = OrderViewModel()
+    @EnvironmentObject var order:OrderViewModel
+    //@ObservedObject var order = OrderViewModel()
 
     var body: some View {
         ZStack {
@@ -37,6 +37,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(OrderViewModel())
     }
 }

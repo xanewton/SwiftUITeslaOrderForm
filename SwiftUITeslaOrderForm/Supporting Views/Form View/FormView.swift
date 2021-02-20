@@ -10,8 +10,8 @@ import SwiftUI
 import Combine
 
 struct FormView: View {
-    //@EnvironmentObject var order: OrderViewModel
-    @ObservedObject var order = OrderViewModel()
+    @EnvironmentObject var order: OrderViewModel
+    //@ObservedObject var order = OrderViewModel()
     
     init() {
         UITableView.appearance().sectionHeaderHeight = 0
@@ -115,7 +115,7 @@ struct FormView: View {
 
 struct FormView_Previews: PreviewProvider {
     static var previews: some View {
-        FormView()
+        FormView().environmentObject(OrderViewModel())
     }
 }
 

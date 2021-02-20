@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct CancelOrderView: View {
-    //@EnvironmentObject var order:OrderViewModel
-    @ObservedObject var order = OrderViewModel()
+    @EnvironmentObject var order:OrderViewModel
+    //@ObservedObject var order = OrderViewModel()
 
     var body: some View {
         ZStack {
@@ -44,6 +44,6 @@ struct CancelOrderView: View {
 
 struct CancelOrderView_Previews: PreviewProvider {
     static var previews: some View {
-        CancelOrderView()
+        CancelOrderView().environmentObject(OrderViewModel())
     }
 }
