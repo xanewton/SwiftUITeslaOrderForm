@@ -14,6 +14,9 @@ struct FormView: View {
     @ObservedObject var order = OrderViewModel()
     
     init() {
+        UITableView.appearance().sectionHeaderHeight = 0
+        UITableView.appearance().sectionFooterHeight = 10
+        // Add next step here
     }
 
     var body: some View {
