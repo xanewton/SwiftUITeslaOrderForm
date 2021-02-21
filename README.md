@@ -16,6 +16,49 @@ eBook source code available at [github](https://github.com/PacktPublishing/Swift
 
 ## References
 - [SF Symbols](https://developer.apple.com/sf-symbols/)
+- [State](https://developer.apple.com/documentation/swiftui/state)
+  When using State, persistent storage is created by SwiftUI for each of our views. For example:
+   @State private var isDriverEnabled: Bool = false
+   By adding @State, we tell the system that the isDriverEnabled variable changes over time, and that views will depend on this value. Changes to @State-wrapped properties initiate a re-rendering of the view when the values are updated. Every change is dispersed to all of the views of the children.
+   
+- [Binding](https://developer.apple.com/documentation/swiftui/binding)
+When you need to pass State through to child views, you will use @Binding. Binding has read and write access to the value without any ownership. To create a binding, you just need to pass a State property using the $ prefix, which provides a reference of the property to the child view. For example:
+```
+    @State private var isDriveEnabled: Bool = false
+    var body: some View {
+        ChildView(driverEnabled: $isDriveEnabled)
+    }
+```
+Inside of the child view, you would just use the following:
+``` @Binding driverEnabled: Bool ```
+Every view marked with State has ownership and properties, and using Binding has read and write access but no ownership.
+
+- [Combine](https://developer.apple.com/videos/play/wwdc2019/722/)
+Combine is a framework introduced in iOS 13, and it brings a native approach to reactive programming.
+Using Combine helps you with synchronous and asynchronous tasks.
+Combine is composed of three main ingredients:
+ + Publishers
+ + Subscribers
+ + Operators
+ Publishers transmit a sequence of values over time. Their pattern is similar to a notification center. There are four kinds of messages that a publisher can transmit:
+  + Subscription: You cannot have a publisher without a subscriber. The connection between the publisher and subscriber would be the subscription.
+  + Value: The value can be any data type that you might want to be sent and received.
+  + Error: You can transmit an error when one occurs, and the subscriber can respond accordingly.
+  + Completion: This value is an optional value but transmits a signal when the stream has successfully ended, and no more data will be transmitted.
+A publisher can be denoted as follows:
+``` PublisherName<Output, Failure> ```
+
+Subscribers declare a type that they can receive from a publisher. If your publisher is transmitting a string type, then your publisher must receive a string as well. There are two parts to a subscriber:
+ + Input: The data type it can receive
+ + Failure: The error type it can receive
+A subscriber can be denoted as follows:
+``` SubscriberName<Input, Failure> ```
+A subscriber's three essential functions are receiving a subscription, obtaining a value, and receiving a completion or failure (error) from a publisher.
+
+Operators are the middleman between the publisher and the subscriber. They convert the value into the correct type.
+
+
+
 
 
 ## License
