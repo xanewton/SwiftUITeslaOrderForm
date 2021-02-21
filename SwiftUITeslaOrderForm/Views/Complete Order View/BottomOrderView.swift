@@ -40,6 +40,7 @@ struct BottomOrderView: View {
             Spacer()
             HStack(spacing: 4) {
                 Text("$160")
+                //Text("$ \(order.calculatePriceWithHourRate(hourRate: 20))")
                     .custom(font: .medium, size: 22)
             }
         }

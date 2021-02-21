@@ -93,6 +93,7 @@ struct FormView: View {
                 HStack(alignment: .center) {
                     Spacer()
                     Text("$160")
+                    //Text("$ \(order.calculatePriceWithHourRate(hourRate: 20))")
                         .custom(font: .bold, size: 60)
                     Spacer()
                 }

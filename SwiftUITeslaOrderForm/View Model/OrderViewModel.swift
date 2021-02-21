@@ -76,6 +76,11 @@ class OrderViewModel: ObservableObject, Codable {
                 print(value)
         }).store(in: &subscriptions)
     }
+    
+    // My function
+    public func calculatePriceWithHourRate(hourRate: Int) -> Int {
+        return rentalAmount * hourRate * amountOfCars
+    }
 }
 
 
