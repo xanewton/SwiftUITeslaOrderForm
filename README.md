@@ -37,25 +37,26 @@ Every view marked with State has ownership and properties, and using Binding has
 Combine is a framework introduced in iOS 13, and it brings a native approach to reactive programming.
 Using Combine helps you with synchronous and asynchronous tasks.
 Combine is composed of three main ingredients:
- + Publishers
- + Subscribers
- + Operators
- Publishers transmit a sequence of values over time. Their pattern is similar to a notification center. There are four kinds of messages that a publisher can transmit:
-  + Subscription: You cannot have a publisher without a subscriber. The connection between the publisher and subscriber would be the subscription.
-  + Value: The value can be any data type that you might want to be sent and received.
-  + Error: You can transmit an error when one occurs, and the subscriber can respond accordingly.
-  + Completion: This value is an optional value but transmits a signal when the stream has successfully ended, and no more data will be transmitted.
+   a) Publishers
+   b) Subscribers
+   c) Operators
+ 
+ **Publishers** transmit a sequence of values over time. Their pattern is similar to a notification center. There are four kinds of messages that a publisher can transmit:
+    a) Subscription: You cannot have a publisher without a subscriber. The connection between the publisher and subscriber would be the subscription.
+    b) Value: The value can be any data type that you might want to be sent and received.
+    c) Error: You can transmit an error when one occurs, and the subscriber can respond accordingly.
+    d) Completion: This value is an optional value but transmits a signal when the stream has successfully ended, and no more data will be transmitted.
 A publisher can be denoted as follows:
 ``` PublisherName<Output, Failure> ```
 
-Subscribers declare a type that they can receive from a publisher. If your publisher is transmitting a string type, then your publisher must receive a string as well. There are two parts to a subscriber:
- + Input: The data type it can receive
- + Failure: The error type it can receive
+**Subscribers** declare a type that they can receive from a publisher. If your publisher is transmitting a string type, then your publisher must receive a string as well. There are two parts to a subscriber:
+   a) Input: The data type it can receive
+   b) Failure: The error type it can receive
 A subscriber can be denoted as follows:
 ``` SubscriberName<Input, Failure> ```
 A subscriber's three essential functions are receiving a subscription, obtaining a value, and receiving a completion or failure (error) from a publisher.
 
-Operators are the middleman between the publisher and the subscriber. They convert the value into the correct type.
+**Operators** are the middleman between the publisher and the subscriber. They convert the value into the correct type.
 
 
 
