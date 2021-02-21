@@ -18,9 +18,7 @@ eBook source code available at [github](https://github.com/PacktPublishing/Swift
 - [SF Symbols](https://developer.apple.com/sf-symbols/)
 - [State](https://developer.apple.com/documentation/swiftui/state)
   When using State, persistent storage is created by SwiftUI for each of our views. For example:
-```
-   @State private var isDriverEnabled: Bool = false 
-``` 
+  ```@State private var isDriverEnabled: Bool = false ``` <br/> 
   By adding @State, we tell the system that the isDriverEnabled variable changes over time, and that views will depend on this value. Changes to @State-wrapped properties initiate a re-rendering of the view when the values are updated. Every change is dispersed to all of the views of the children.
    
 - [Binding](https://developer.apple.com/documentation/swiftui/binding)
