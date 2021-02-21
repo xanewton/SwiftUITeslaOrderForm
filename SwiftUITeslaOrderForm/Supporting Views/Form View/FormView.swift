@@ -97,19 +97,6 @@ struct FormView: View {
                     Spacer()
                 }
             }
-            Section {
-                Button(action: {
-                    self.order.isOrderCompleteVisible.toggle()
-                }) {
-                    Text("COMPLETE ORDER")
-                }
-                .custom(font: .bold, size: 28)
-                .frame(minWidth: 0, maxWidth: .infinity)
-                .frame(height: 60)
-                .foregroundColor(.white)
-                .background(Color.baseGreen)
-                .cornerRadius(10)
-            }
         }
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var order:OrderViewModel
-    //@ObservedObject var order = OrderViewModel()
 
     var body: some View {
         ZStack {
@@ -21,6 +20,7 @@ struct ContentView: View {
                         FormView()
                             .environmentObject(order)
                             .frame(height: 450)
+                        completeButton
                     }
                     .padding(.top, 40)
                 }
@@ -32,6 +32,23 @@ struct ContentView: View {
                 .opacity(order.isOrderCompleteVisible ? 1 : 0)
                 .animation(.default)
         }
+    }
+
+    var completeButton: some View {
+        Button(action: {
+            self.order.isOrderCompleteVisible.toggle()
+            self.order.sendOrder()
+        }) {
+            Text("COMPLETE ORDER")
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .frame(height: 60)
+        }
+        .custom(font: .bold, size: 28)
+        .frame(height: 60)
+        .foregroundColor(.white)
+        .background(Color.baseGreen)
+        .cornerRadius(10)
+        .padding(.horizontal)
     }
 }
 
