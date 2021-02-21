@@ -12,12 +12,20 @@ struct CompleteOrderView: View {
     @EnvironmentObject var order:OrderViewModel
     
     var body: some View {
-        VStack {
-            TopOrderView().padding(.top, 20)
-            BottomOrderView()
+        ZStack {
+            Color.white
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                TopOrderView().padding(.top, 20)
+                BottomOrderView()
+                    .environmentObject(order)
+            }.padding(.horizontal, 10)
+            
+            CancelOrderView()
+                .opacity(order.isCancelOrderVisible ? 1 : 0)
+                .animation(.default)
         }
-        .background(Color.white)
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

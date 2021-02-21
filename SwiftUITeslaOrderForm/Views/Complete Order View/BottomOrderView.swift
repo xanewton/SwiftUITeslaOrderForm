@@ -23,14 +23,16 @@ struct BottomOrderView: View {
     var info: some View {
         HStack {
             HStack(spacing: 4) {
-                Text("1")
+                //Text("1")
+                Text("\(order.numberOfCars[order.amountOfCars])")
                     .custom(font: .medium, size: 22)
                 Text("car")
                     .custom(font: .ultralight, size: 22)
             }
             Spacer()
             HStack(spacing: 4) {
-                Text("2")
+                //Text("2")
+                Text("\(order.rentalPeriods[order.rentalAmount])")
                     .custom(font: .medium, size: 22)
                 Text("hours")
                     .custom(font: .ultralight, size: 22)
